@@ -1,0 +1,11 @@
+<%= form_for @comida, multipart: true do |f| %>
+  <%= f.label :nombre %>
+  <%= f.text_field :nombre %>
+  <%= f.label :precio %>
+  <%= f.number_field :precio %>
+  <%= f.label :imagen %>
+  <%= f.file_field :imagen %>
+  <div class="input-field">
+    <%= f.submit "Enviar", class: "btn" %>
+  </div>
+<% end %>

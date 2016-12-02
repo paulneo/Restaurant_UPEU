@@ -1,0 +1,21 @@
+<div class="row">
+  <div class="col offset-s4 s5">
+    <% @comidas.each do |comida| %>
+      <div class="card horizontal">
+        <div class="card-image waves-effect waves-block waves-light">
+          <%= image_tag comida.imagen, class: 'activator image-food' %>
+        </div>
+        <div class="card-content">
+          <p class="card-title">
+            <%= comida.nombre %>
+          </p>
+          <p><strong>Precio:</strong> <small>S/. <%= comida.precio %></small></p>
+        </div>
+        <div class="card-action">
+          <p><%= link_to 'Editar', edit_food_path(comida), class: "waves-effect waves-light btn" %></p>
+          <p><%= link_to 'Eliminar', comida, method: :delete, "data-confirm": "¿Estas seguro?", class:"waves-effect waves-light btn" %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
